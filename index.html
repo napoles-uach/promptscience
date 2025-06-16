@@ -1,91 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Prompt Science</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9fafb;
-            color: #1f2937;
-            line-height: 1.7;
-        }
-        header {
-            background-color: #111827;
-            color: white;
-            padding: 3rem 1rem;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        header p {
-            margin-top: 0.5rem;
-            font-size: 1.1rem;
-            color: #d1d5db;
-        }
-        main {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        h2 {
-            margin-top: 2rem;
-            color: #111827;
-        }
-        ul {
-            padding-left: 1.5rem;
-        }
-        code {
-            background-color: #e5e7eb;
-            padding: 0.2em 0.4em;
-            border-radius: 4px;
-            font-family: monospace;
-        }
-        footer {
-            text-align: center;
-            font-size: 0.9rem;
-            color: #6b7280;
-            margin: 3rem 0 1rem 0;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prompt Science</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: #f9fafb;
+      color: #1f2937;
+    }
+    header {
+      background: #111827;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      color: #d1d5db;
+      margin-top: 0.5rem;
+    }
+    .tabs {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .tab-buttons {
+      display: flex;
+      border-bottom: 2px solid #e5e7eb;
+    }
+    .tab-buttons button {
+      flex: 1;
+      background: none;
+      border: none;
+      padding: 1rem;
+      cursor: pointer;
+      font-weight: 600;
+      border-bottom: 3px solid transparent;
+    }
+    .tab-buttons button.active {
+      border-bottom: 3px solid #2563eb;
+      color: #2563eb;
+    }
+    .tab-content {
+      display: none;
+      padding: 2rem 0;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    footer {
+      text-align: center;
+      color: #6b7280;
+      font-size: 0.9rem;
+      margin: 3rem 0 1rem 0;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    code {
+      background: #e5e7eb;
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+    }
+  </style>
 </head>
 <body>
 
 <header>
-    <h1>Prompt Science</h1>
-    <p>A Journal for Transparent Human–LLM Co-Creation</p>
+  <h1>Prompt Science</h1>
+  <p>A Journal for Transparent Human–LLM Co-Creation</p>
 </header>
 
-<main>
+<div class="tabs">
+  <div class="tab-buttons">
+    <button class="active" onclick="openTab('about')">About</button>
+    <button onclick="openTab('issue')">Issue 0</button>
+    <button onclick="openTab('policies')">Policies</button>
+    <button onclick="openTab('contact')">Contact</button>
+  </div>
+
+  <div id="about" class="tab-content active">
     <h2>What is Prompt Science?</h2>
     <p>
-        <strong>Prompt Science</strong> is an experimental editorial initiative exploring how humans and large language models (LLMs)
-        can co-create scientific knowledge in a transparent, ethical, and reproducible way.
+      Prompt Science is an experimental editorial initiative exploring how humans and large language models (LLMs)
+      can co-create scientific knowledge in a transparent, ethical, and reproducible way.
     </p>
+  </div>
 
+  <div id="issue" class="tab-content">
     <h2>Call for Contributions – Issue 0</h2>
     <p>
-        We invite researchers, technologists, and critical thinkers to participate in our pilot issue.
-        You can contribute as:
+      We invite researchers, technologists, and critical thinkers to participate in our pilot issue.
+      You can contribute as:
     </p>
     <ul>
-        <li><strong>Author</strong>: Submit a human–LLM co-created article.</li>
-        <li><strong>Reviewer</strong>: Provide peer review for submissions.</li>
-        <li><strong>Technical auditor</strong>: Help assess reproducibility and model usage.</li>
+      <li><strong>Author</strong>: Submit a human–LLM co-created article.</li>
+      <li><strong>Reviewer</strong>: Provide peer review for submissions.</li>
+      <li><strong>Technical auditor</strong>: Help assess reproducibility and model usage.</li>
     </ul>
+  </div>
 
-    <p>📬 Contact us: <code>promptscience@gmail.com</code></p>
-</main>
+  <div id="policies" class="tab-content">
+    <h2>Editorial Policies</h2>
+    <ul>
+      <li>All contributions involving LLMs must include a prompt log.</li>
+      <li>Human authors are fully responsible for content validity.</li>
+      <li>We support open science: all content is CC BY 4.0 licensed.</li>
+    </ul>
+  </div>
+
+  <div id="contact" class="tab-content">
+    <h2>Contact</h2>
+    <p>📬 Email us at: <code>promptscience@gmail.com</code></p>
+    <p>More contact options will be added soon.</p>
+  </div>
+</div>
 
 <footer>
-    &copy; 2025 Prompt Science · Licensed under CC BY 4.0
+  &copy; 2025 Prompt Science · Licensed under CC BY 4.0
 </footer>
+
+<script>
+  function openTab(tabId) {
+    const tabs = document.querySelectorAll('.tab-content');
+    const buttons = document.querySelectorAll('.tab-buttons button');
+    tabs.forEach(tab => tab.classList.remove('active'));
+    buttons.forEach(btn => btn.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+</script>
 
 </body>
 </html>
