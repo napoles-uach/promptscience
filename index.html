@@ -10,7 +10,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #ebecef;
+      background-color: #eceef2;
       color: #0f172a;
       overflow-x: hidden;
     }
@@ -116,11 +116,8 @@
 
 <header>
   
-<svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="50" cy="50" r="48" stroke="#38bdf8" stroke-width="4"/>
-  <text x="50%" y="54%" text-anchor="middle" fill="#38bdf8" font-size="36" font-family="Inter" dy=".3em">P</text>
-</svg>
-<h1 style='display:inline-block; margin-left: 10px; vertical-align: middle;'>Prompt Science</h1>
+
+<h1>Prompt Science</h1>
   <p>A Journal for Transparent Human–LLM Co-Creation</p>
 </header>
 
@@ -165,7 +162,7 @@
 
   <div id="contact" class="tab-content">
     <h2>Contact</h2>
-    <p>📬 Email us at: <strong>scienceprompt@gmail.com</strong></p>
+    <p>📬 Email us at: <code>promptscience@gmail.com</code></p>
     <p>More contact options will be added soon.</p>
   
   <div id="articles" class="tab-content">
@@ -222,7 +219,7 @@
     nodes.forEach(n => {
       ctx.beginPath();
       ctx.arc(n.x, n.y, 2, 0, Math.PI * 2);
-      ctx.fillStyle = "#38bdf8";
+      ctx.fillStyle = "rgba(56,189,248,1.0)";
       ctx.fill();
     });
 
@@ -235,7 +232,7 @@
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
           ctx.lineTo(b.x, b.y);
-          ctx.strokeStyle = "rgba(56,189,248," + (1 - dist / 120) + ")";
+          ctx.strokeStyle = "rgba(56,189,248," + ((1 - dist / 120) * 0.3) + ")";
           ctx.stroke();
         }
       }
