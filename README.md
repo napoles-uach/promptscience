@@ -9,7 +9,7 @@ Each episode covers **recent advances in AI applied to science**, generated with
 ---
 
 ## 🌍 Website
-https://promptscience.org/
+
 📡 **Live site:** [https://promptscience.org/](https://promptscience.org/)  
 🎧 **RSS Feed:** [https://promptscience.org/feeds/podcast.rss](https://promptscience.org/feeds/podcast.rss)
 
