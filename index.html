@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Prompt Science</title>
+  <title>Prompt Science — Podcast</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     html, body {
@@ -14,125 +14,65 @@
       color: #0f172a;
       overflow-x: hidden;
     }
-
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 0;
-    }
-
+    canvas { position: fixed; top: 0; left: 0; z-index: 0; }
     header {
       background: transparent;
-      padding: 3rem 1rem 2rem;
+      padding: 3rem 1rem 1rem;
       text-align: center;
       position: relative;
       z-index: 2;
     }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      color: #157aa5;
+    header h1 { margin: 0; font-size: 2.5rem; color: #157aa5; }
+    header p { margin-top: 0.5rem; color: #475569; font-size: 1.1rem; }
+    .top-cta { margin-top: 1rem; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .chip {
+      background: #38bdf8; color: #0f172a; padding: 0.5rem 0.9rem; border-radius: 999px; font-weight: 600; text-decoration: none;
+      box-shadow: 0 1px 0 rgba(0,0,0,.05);
     }
-
-    header p {
-      margin-top: 0.5rem;
-      color: #475569;
-      font-size: 1.1rem;
-    }
-
+    .chip:hover { background:#0ea5e9; }
     .tabs {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-      position: relative;
-      z-index: 2;
+      max-width: 1000px; margin: 2rem auto; padding: 0 1rem; position: relative; z-index: 2;
     }
-
     .tab-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      background: #f1f5f9;
-      border-radius: 6px;
-      overflow: hidden;
+      display: flex; flex-wrap: wrap; background: #f1f5f9; border-radius: 6px; overflow: hidden;
     }
-
     .tab-buttons button {
-      flex: 1;
-      background: none;
-      border: none;
-      padding: 1rem;
-      cursor: pointer;
-      font-weight: 600;
-      color: #1e293b;
+      flex: 1; background: none; border: none; padding: 1rem; cursor: pointer; font-weight: 600; color: #1e293b;
       transition: all 0.3s ease;
     }
-
-    .tab-buttons button:hover {
-      background: #1e293b;
-      color: white;
-    }
-
-    .tab-buttons button.active {
-      background: #38bdf8;
-      color: #0f172a;
-    }
-
+    .tab-buttons button:hover { background: #1e293b; color: white; }
+    .tab-buttons button.active { background: #38bdf8; color: #0f172a; }
     .tab-content {
-      display: none;
-      background: #f1f5f9;
-      padding: 2rem;
-      margin-top: 1rem;
-      border-radius: 6px;
+      display: none; background: #f1f5f9; padding: 2rem; margin-top: 1rem; border-radius: 6px;
     }
-
-    .tab-content.active {
-      display: block;
+    .tab-content.active { display: block; }
+    .episodes-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;
     }
-
-    ul {
-      padding-left: 1.5rem;
+    .episode-card {
+      background: #fff; border-radius: 8px; padding: 1rem; box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      display: flex; flex-direction: column; gap: .5rem;
     }
-
-    code {
-      background: #c1c8d1;
-      padding: 0.2em 0.4em;
-      border-radius: 4px;
-      font-family: monospace;
-    }
-
-    .section {
-      max-width: 800px;
-      margin: 0 auto 3rem;
-      background: #f1f5f9;
-      padding: 2rem;
-      border-radius: 8px;
-    }
-
+    .episode-card h3 { margin: 0 0 .25rem 0; font-size: 1.05rem; color:#0f172a; }
+    .meta { font-size: .85rem; color:#64748b; }
+    audio { width: 100%; margin-top: .5rem; }
     .button-link {
-      display: inline-block;
-      background-color: #38bdf8;
-      color: #0f172a;
-      padding: 0.75rem 1.5rem;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: 6px;
-      margin-top: 1rem;
+      display: inline-block; background-color: #38bdf8; color: #0f172a; padding: 0.6rem 1rem; font-weight: 600;
+      text-decoration: none; border-radius: 6px; margin-top: .5rem;
     }
-
-    .button-link:hover {
-      background-color: #0ea5e9;
-    }
-
+    .button-link:hover { background-color: #0ea5e9; }
+    .section { max-width: 800px; margin: 0 auto 1.2rem; background: #fff; padding: 1.2rem; border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,.05); }
+    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; background:#c1c8d1; padding: .1em .35em; border-radius: 4px; }
+    ul { padding-left: 1.3rem; }
     footer {
-      text-align: center;
-      font-size: 0.85rem;
-      color: #64748b;
-      margin: 4rem 0 2rem 0;
-      position: relative;
-      z-index: 2;
+      text-align: center; font-size: 0.85rem; color: #64748b; margin: 4rem 0 2rem 0; position: relative; z-index: 2;
     }
+    .pill { display:inline-block; font-size:.8rem; padding:.15rem .5rem; border-radius:999px; background:#e2e8f0; color:#0f172a; }
+    .rss-box { display:flex; gap:.5rem; align-items:center; flex-wrap:wrap; }
+    .input-like { background:#fff; border:1px solid #cbd5e1; padding:.5rem .6rem; border-radius:6px; font-size:.9rem; }
+    .small { font-size:.9rem; color:#475569; }
+    .muted { color:#64748b; }
+    details summary { cursor: pointer; font-weight: 600; }
   </style>
 </head>
 <body>
@@ -141,203 +81,251 @@
 
 <header>
   <h1>Prompt Science</h1>
-  <p>A Journal for Transparent Human–LLM Co-Creation</p>
+  <p>AI, research, and the frontiers of discovery — a community-audited podcast.</p>
+  <div class="top-cta">
+    <a id="rssLinkTop" class="chip" href="#" target="_blank">RSS Feed</a>
+    <a id="repoLinkTop" class="chip" href="#" target="_blank">GitHub</a>
+    <a class="chip" href="#listen" onclick="openTab('listen')">▶︎ Listen</a>
+  </div>
 </header>
 
 <div class="tabs">
   <div class="tab-buttons">
-    <button class="active" onclick="openTab('about')">About</button>
-    <button onclick="openTab('issue')">Issue 0</button>
-    <button onclick="openTab('policies')">Policies</button>
-    <button onclick="openTab('articles')">Articles</button>
+    <button class="active" onclick="openTab('listen')">Listen</button>
+    <button onclick="openTab('about')">About</button>
+    <button onclick="openTab('how')">How it works</button>
+    <button onclick="openTab('contribute')">Contribute</button>
+    <button onclick="openTab('submit')">Submit corrections</button>
     <button onclick="openTab('contact')">Contact</button>
-    <button onclick="openTab('disclosure')">Disclosure</button>
-    <button onclick="openTab('submit')">Submit</button>
   </div>
 
-<div id="about" class="tab-content active">
-  <h2>What is Prompt Science?</h2>
-  <p>
-    Prompt Science is an experimental editorial initiative exploring how humans and large language models (LLMs)
-    can co-create scientific knowledge in a transparent, ethical, and reproducible way.
-  </p>
+  <!-- LISTEN -->
+  <div id="listen" class="tab-content active">
+    <h2 id="listenTitle">Episodes</h2>
+    <p class="small muted">New episodes weekly. Audio files are hosted in <span class="kbd">/episodes</span>. This list can auto-load from <span class="kbd">episodes/episodes.json</span>.</p>
+    <div id="episodes" class="episodes-grid"></div>
 
-  <h3>Mission</h3>
-  <p>
-    To promote a new mode of scientific production based on transparent, ethical, and reproducible collaboration 
-    between humans and large language models (LLMs) recognizing their potential to 
-    accelerate discovery, enhance creativity, and strengthen scientific integrity.
-  </p>
+    <div class="section">
+      <h3>Subscribe</h3>
+      <div class="rss-box">
+        <span class="input-like" id="rssValue">https://your-user.github.io/prompt-science/feeds/podcast.rss</span>
+        <a class="button-link" id="rssLink" href="#" target="_blank">Open RSS</a>
+        <button class="button-link" onclick="copyRSS()">Copy</button>
+      </div>
+      <p class="small muted">Use this RSS in your favorite podcast app. Apple/Spotify links can be added once directories approve the show.</p>
+      <div class="top-cta" style="margin-top:.75rem">
+        <a class="chip" id="spotifyLink" href="#" target="_blank">Spotify</a>
+        <a class="chip" id="appleLink" href="#" target="_blank">Apple Podcasts</a>
+      </div>
+    </div>
+  </div>
 
-  <h3>Vision</h3>
-  <p>
-    To become the leading global platform for human–LLM co-created scientific publications, establishing clear 
-    standards for interaction, documentation, and evaluation that drive a new era of open, explainable, and 
-    collaborative science.
-  </p>
-</div>
+  <!-- ABOUT -->
+  <div id="about" class="tab-content">
+    <h2>What is Prompt Science?</h2>
+    <div class="section">
+      <p><strong>Prompt Science</strong> is a podcast where large language models help draft scripts from recent, high-quality sources, and the community reviews, corrects, and enriches them. Every episode documents the models used, prompts, and references, so the process is transparent and reproducible.</p>
+      <p>Episodes are generated with AI, reviewed by humans, and published with <span class="pill">sources</span>, <span class="pill">transcripts</span>, and <span class="pill">version history</span>. When the script updates, the audio is regenerated and a new version is published.</p>
+    </div>
+    <div class="section">
+      <details>
+        <summary>Typical episode pipeline</summary>
+        <ul>
+          <li>Collect recent items from top venues (Nature, Science, arXiv, institutional newsrooms).</li>
+          <li>Draft a script with LLMs (tone: clear, curious, neutral American narration).</li>
+          <li>Human review: fact-check, adjust dates, add author names and citations.</li>
+          <li>Text-to-speech renders the final audio; MP3 is stored in <span class="kbd">/episodes</span>.</li>
+          <li>Publish to GitHub Pages, update RSS, announce.</li>
+        </ul>
+      </details>
+    </div>
+  </div>
 
+  <!-- HOW IT WORKS -->
+  <div id="how" class="tab-content">
+    <h2>How it works</h2>
+    <div class="section">
+      <p><strong>Generation:</strong> LLMs draft the episode from recent sources with explicit prompts and guardrails.</p>
+      <p><strong>Verification:</strong> Contributors open Pull Requests to correct facts, add context, or improve clarity. All changes are version-controlled.</p>
+      <p><strong>Reproduction:</strong> We track model names, versions, and prompts so episodes can be regenerated deterministically where possible.</p>
+    </div>
+    <div class="section">
+      <details>
+        <summary>Files and structure</summary>
+        <pre class="small">
+episodes/
+  2025-10-05-navier-stokes.mp3
+  2025-10-05-navier-stokes.md     ← transcript
+  episodes.json                   ← optional index
+assets/
+  cover.png
+feeds/
+  podcast.rss                     ← your RSS feed
+index.html
+        </pre>
+      </details>
+    </div>
+  </div>
 
-<div id="issue" class="tab-content">
-  <h2>Call for Contributions – Issue 0</h2>
-  <ul>
-    <li><strong>Author</strong>: Submit a human–LLM co-created article.</li>
-    <li><strong>Reviewer</strong>: Provide peer review for submissions.</li>
-    <li><strong>Technical auditor</strong>: Help assess reproducibility and model usage.</li>
-    <li><strong>Ethics & Governance</strong>: Join the working group on LLM use and transparency.</li>
-    <li><strong>Staff</strong>: Help with editorial, copyediting, or translation tasks.</li>
-  </ul>
+  <!-- CONTRIBUTE -->
+  <div id="contribute" class="tab-content">
+    <h2>Contribute</h2>
+    <div class="section">
+      <p>Spotted an error? Want to add a paper or clarify a claim? Contribute on GitHub with a Pull Request. Edit the transcript Markdown, update references, or add a new episode card to <span class="kbd">episodes/episodes.json</span>.</p>
+      <a id="repoLink" class="button-link" href="#" target="_blank">Open GitHub Repository</a>
+    </div>
+    <div class="section">
+      <details>
+        <summary>How to add a new episode</summary>
+        <ol>
+          <li>Add the MP3 to <span class="kbd">/episodes</span>.</li>
+          <li>Add a transcript <span class="kbd">.md</span> with references.</li>
+          <li>Append an entry to <span class="kbd">episodes/episodes.json</span> with title, date, duration, and file paths.</li>
+          <li>Open a Pull Request. A maintainer merges after quick checks.</li>
+        </ol>
+      </details>
+    </div>
+  </div>
 
-  <p>
-    If you're interested in participating, please fill out the short form below:
-  </p>
+  <!-- SUBMIT CORRECTIONS -->
+  <div id="submit" class="tab-content">
+    <h2>Submit corrections</h2>
+    <div class="section">
+      <p>Prefer not to use GitHub? Send corrections or sources by email. Include the episode title, the exact sentence, and a reliable citation.</p>
+      <p>📬 <strong><a id="emailLink" href="mailto:scienceprompt@gmail.com">scienceprompt@gmail.com</a></strong></p>
+    </div>
+    <div class="section">
+      <details>
+        <summary>Minimal checklist for corrections</summary>
+        <ul>
+          <li>Concrete reference (DOI, arXiv, Nature/Science URL).</li>
+          <li>Accurate dates and author names.</li>
+          <li>Direct quote or paraphrase with citation.</li>
+          <li>If adding numbers, show how they were computed.</li>
+        </ul>
+      </details>
+    </div>
+  </div>
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe_G_ncCjp46FEAWhRw8fhxsIGJ9QBfzb6ejMktyOm68xc1rA/viewform?embedded=true" width="640" height="1383" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
-</div>
-
-
- <div id="policies" class="tab-content">
-  <h2>Editorial Policies</h2>
-  <ul>
-    <li><strong>Prompt Transparency:</strong> All contributions involving LLMs must include a prompt log describing the nature and role of the interactions.</li>
-    <li><strong>Human Accountability:</strong> Human authors are fully responsible for content validity, originality, and ethical compliance.</li>
-    <li><strong>Open Licensing:</strong> We support open science. All accepted contributions are published under a CC BY 4.0 license.</li>
-    <li><strong>Numerical Results and Verification:</strong> Any numerical values, simulations, or quantitative results generated by LLMs must be independently verified through external tools or reproducible methods. Unverified numerical outputs should not be presented as scientific findings unless their verification or analysis is itself part of the study.</li>
-  </ul>
-</div>
-
-
-<div id="articles" class="tab-content">
-  <h2>Author Guidelines – Prompt Science Journal</h2>
-  <p>
-    Welcome to <em>Prompt Science</em>, a journal dedicated to transparent and reproducible collaboration between humans and large language models (LLMs). Please follow these guidelines carefully when preparing and submitting your manuscript.
-  </p>
-
-  <h3>Manuscript Types</h3>
-  <ul>
-    <li><strong>Research Articles</strong>: Reports on original research involving LLM–human co-creation.</li>
-    <li><strong>Case Studies</strong>: Descriptions of notable or novel use of LLMs in a scientific workflow.</li>
-    <li><strong>Methodological Notes</strong>: Innovations in prompt engineering, reproducibility, or collaboration design.</li>
-    <li><strong>Reviews and Perspectives</strong>: Broader discussions on the implications of LLMs in science.</li>
-  </ul>
-
-  <h3>Article Format</h3>
-  <p>Please use the LaTeX template provided in our <a href="#">Overleaf Project</a> (link to be added). Articles should include:</p>
-  <ul>
-    <li><strong>Title</strong> and short running title.</li>
-    <li><strong>Authors</strong> and affiliations.</li>
-    <li><strong>Abstract</strong> (max 250 words).</li>
-    <li><strong>Main Text</strong> (up to 6000 words): Including Introduction, Methods, Results, Discussion.</li>
-    <li><strong>Prompt Log Appendix</strong>: Full description or transcript of LLM interactions.</li>
-    <li><strong>Disclosure Statement</strong>: Describing how LLMs were used and how human oversight was maintained.</li>
-    <li><strong>References</strong>: Use APA or BibTeX format.</li>
-  </ul>
-
-  <h3>Submission Instructions</h3>
-  <ol>
-    <li>Prepare your manuscript using our template.</li>
-    <li>Include all required sections and metadata.</li>
-    <li>Submit through our OJSCloud platform at <a href="https://submit.promptscience.org">submit.promptscience.org</a>.</li>
-  </ol>
-
-  <h3>Important Notes</h3>
-  <ul>
-    <li><strong>Numerical Outputs</strong>: Any numbers generated by LLMs must be explicitly verified unless verification is part of the research question.</li>
-    <li><strong>Co-Authorship with LLMs</strong>: You may list an LLM as a co-author only if the human author retains full accountability and clearly documents the contribution.</li>
-    <li><strong>Reproducibility</strong>: We encourage authors to upload code, data, and prompts to an open repository.</li>
-  </ul>
-
-  <p>For questions, contact us at <strong><a href="mailto:promptscience@gmail.com">promptscience@gmail.com</a></strong></p>
-</div>
-
-
+  <!-- CONTACT -->
   <div id="contact" class="tab-content">
     <h2>Contact</h2>
-    <p>📬 Email us at: <code>scienceprompt@gmail.com</code></p>
-    <p>More contact options will be added soon.</p>
-  </div>
-
-<div id="disclosure" class="tab-content">
-  <h2>Disclosure of Human–LLM Collaboration</h2>
-  <p>
-    We ask all authors to provide a disclosure explaining how LLMs were used in their work. This includes:
-  </p>
-  <ul>
-    <li>Which model(s) were used, including provider and version.</li>
-    <li>Whether prompts were written by the human author, generated, or adapted from other sources.</li>
-    <li>Whether any of the text was generated entirely by the LLM, and if so, which parts.</li>
-    <li>If the human author edited, rejected, or rewrote suggestions by the LLM.</li>
-  </ul>
-  <p>
-    Being honest and precise in this disclosure helps build trust and transparency in our new modes of collaboration.
-  </p>
-
-  <h3>AI Contributor Disclosure Policy</h3>
-  <p>
-    <strong>Prompt Science</strong> is founded on a core principle: transparency in the use of large language models (LLMs).
-    We recognize that researchers may vary in their familiarity with prompting practices and workflow integration,
-    but all authors are expected to document their LLM usage in a clear, honest, and reproducible manner.
-  </p>
-
-  <h4>Minimum Disclosure Requirements</h4>
-  <ul>
-    <li>The main prompts used, or a representative example.</li>
-    <li>The model name and checkpoint (e.g., GPT-4, Claude Opus, Mistral 7B).</li>
-    <li>Key parameters such as temperature, top-p, etc.</li>
-    <li>A description of the model’s role in the writing process.</li>
-  </ul>
-
-  <h4>Ethical Expectation</h4>
-  <p>
-    We understand that some authors may be uncertain about how much to disclose or may feel protective of their prompt engineering process.
-    We encourage respectful discretion, but we also strongly emphasize academic integrity.
-    Accurate reporting of AI interaction is not only ethical—it enhances reproducibility, trust, and scholarly dialogue.
-  </p>
-</div>
-
-  <div id="submit" class="tab-content">
-    <div class="section">
-      <h2>Online Submission System</h2>
-      <p>
-        We use an external submission platform to manage articles, reviews, and publication workflows. 
-        You will be redirected to our secure submission system hosted by <strong>OJSCloud</strong>.
-      </p>
-      <a href="https://submit.promptscience.org" class="button-link">Go to Submission Portal</a>
-    </div>
-
-    <div class="section">
-      <h2>Need Help?</h2>
-      <p>For questions about the submission process, formatting guidelines, or technical support, feel free to contact us:</p>
-      <p>📬 <strong>scienceprompt@gmail.com</strong></p>
-    </div>
+    <p>📬 Email: <code>scienceprompt@gmail.com</code></p>
+    <p class="small muted">We’re preparing Apple/Spotify listings; links will appear here once approved.</p>
   </div>
 </div>
 
 <footer>
-  &copy; 2025 Prompt Science · Licensed under CC BY 4.0
+  &copy; 2025 Prompt Science · Audio & text licensed under CC BY 4.0
 </footer>
 
 <script>
+  // ====== CONFIG: set these to your own values ======
+  const GITHUB_REPO = "https://github.com/your-user/prompt-science-podcast";
+  const RSS_URL     = "https://your-user.github.io/prompt-science-podcast/feeds/podcast.rss";
+  const SPOTIFY_URL = "#";  // add once approved
+  const APPLE_URL   = "#";  // add once approved
+
+  // Fallback if episodes/episodes.json is absent:
+  const FALLBACK_EPISODES = [
+    {
+      id: "2025-10-05-navier-stokes",
+      title: "Special: DeepMind, Navier–Stokes, and the Millennium Problem",
+      date: "2025-10-05",
+      duration: "11:45",
+      audio: "episodes/2025-10-05-navier-stokes.mp3",
+      transcript: "episodes/2025-10-05-navier-stokes.md",
+      description: "How AI-assisted mathematics is exploring one of the hardest open problems in fluid dynamics."
+    },
+    {
+      id: "2025-10-03-weekly",
+      title: "Weekly: Materials, Biosecurity, and Autonomous Labs",
+      date: "2025-10-03",
+      duration: "10:07",
+      audio: "episodes/2025-10-03-weekly.mp3",
+      transcript: "episodes/2025-10-03-weekly.md",
+      description: "A tour through recent AI-in-science highlights and why they matter."
+    }
+  ];
+  // ================================================
+
+  // Wire header buttons
+  document.getElementById('repoLinkTop').href = GITHUB_REPO;
+  document.getElementById('repoLink').href    = GITHUB_REPO;
+  document.getElementById('rssLinkTop').href  = RSS_URL;
+  document.getElementById('rssLink').href     = RSS_URL;
+  document.getElementById('spotifyLink').href = SPOTIFY_URL;
+  document.getElementById('appleLink').href   = APPLE_URL;
+  document.getElementById('rssValue').textContent = RSS_URL;
+
+  function copyRSS(){
+    navigator.clipboard.writeText(RSS_URL);
+    alert("RSS link copied!");
+  }
+
+  // Tabs
   function openTab(tabId) {
     const tabs = document.querySelectorAll('.tab-content');
     const buttons = document.querySelectorAll('.tab-buttons button');
     tabs.forEach(tab => tab.classList.remove('active'));
     buttons.forEach(btn => btn.classList.remove('active'));
     document.getElementById(tabId).classList.add('active');
-    event.currentTarget.classList.add('active');
+    // find the button that triggers this id and set active
+    buttons.forEach(b=>{
+      if (b.getAttribute('onclick') && b.getAttribute('onclick').includes(`'${tabId}'`)) b.classList.add('active');
+    });
+  }
+  window.openTab = openTab; // expose for inline onclick
+
+  // Load episodes.json if present, otherwise use fallback
+  async function loadEpisodes(){
+    try {
+      const res = await fetch('episodes/episodes.json', { cache: 'no-store' });
+      if (!res.ok) throw new Error('no episodes.json');
+      const data = await res.json();
+      renderEpisodes(Array.isArray(data) ? data : data.episodes);
+    } catch {
+      renderEpisodes(FALLBACK_EPISODES);
+    }
   }
 
+  function renderEpisodes(items){
+    const container = document.getElementById('episodes');
+    container.innerHTML = "";
+    if (!items || !items.length) {
+      container.innerHTML = "<p>No episodes yet. Add MP3 files to <span class='kbd'>/episodes</span>.</p>";
+      return;
+    }
+    // sort newest first
+    items.sort((a,b)=> new Date(b.date) - new Date(a.date));
+    items.forEach(ep=>{
+      const card = document.createElement('div');
+      card.className = 'episode-card';
+      card.innerHTML = `
+        <h3>${escapeHTML(ep.title || "Untitled Episode")}</h3>
+        <div class="meta">${escapeHTML(ep.date || "")} · ${escapeHTML(ep.duration || "")}</div>
+        <p class="small">${escapeHTML(ep.description || "")}</p>
+        <audio controls preload="none">
+          <source src="${escapeAttr(ep.audio)}" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <div>
+          ${ep.transcript ? `<a class="button-link" href="${escapeAttr(ep.transcript)}" target="_blank">Transcript</a>` : ""}
+          ${ep.refs ? `<a class="button-link" href="${escapeAttr(ep.refs)}" target="_blank">References</a>` : ""}
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  }
+  function escapeHTML(s){ return (s||"").replace(/[&<>"']/g, m=>({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;" }[m])); }
+  function escapeAttr(s){ return (s||"").replace(/"/g, '&quot;'); }
+
+  // Background animation
   const canvas = document.getElementById('background');
   const ctx = canvas.getContext('2d');
   let nodes = [];
-
-  function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-  window.addEventListener('resize', resize);
-  resize();
-
+  function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resize); resize();
   function initNodes(count) {
     nodes = [];
     for (let i = 0; i < count; i++) {
@@ -349,49 +337,37 @@
       });
     }
   }
-
   function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     nodes.forEach(n => {
-      ctx.beginPath();
-      ctx.arc(n.x, n.y, 2, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(56,189,248,1.0)";
-      ctx.fill();
+      ctx.beginPath(); ctx.arc(n.x, n.y, 2, 0, Math.PI * 2);
+      ctx.fillStyle = "rgba(56,189,248,1.0)"; ctx.fill();
     });
-
     for (let i = 0; i < nodes.length; i++) {
       for (let j = i + 1; j < nodes.length; j++) {
         const a = nodes[i], b = nodes[j];
         const dx = a.x - b.x, dy = a.y - b.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < 120) {
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.lineTo(b.x, b.y);
+          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
           ctx.strokeStyle = "rgba(56,189,248," + ((1 - dist / 120) * 0.3) + ")";
           ctx.stroke();
         }
       }
     }
   }
-
   function update() {
     nodes.forEach(n => {
-      n.x += n.vx;
-      n.y += n.vy;
+      n.x += n.vx; n.y += n.vy;
       if (n.x < 0 || n.x > canvas.width) n.vx *= -1;
       if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
     });
   }
+  function animate() { draw(); update(); requestAnimationFrame(animate); }
+  initNodes(60); animate();
 
-  function animate() {
-    draw();
-    update();
-    requestAnimationFrame(animate);
-  }
-
-  initNodes(60);
-  animate();
+  // boot
+  loadEpisodes();
 </script>
 
 </body>
