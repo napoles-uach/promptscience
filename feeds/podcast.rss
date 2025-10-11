@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>Prompt Science</title>
+    <link>https://promptscience.org/</link>
+    <atom:link href="https://promptscience.org/feeds/podcast.rss" rel="self" type="application/rss+xml" />
+    <description>AI, research, and the frontiers of discovery — a community-audited podcast.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 05 Oct 2025 10:00:00 +0000</lastBuildDate>
+    <itunes:author>Prompt Science</itunes:author>
+    <itunes:summary>AI, research, and the frontiers of discovery — a community-audited podcast, where humans and LLMs collaborate to produce accurate, verifiable narratives.</itunes:summary>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:owner>
+      <itunes:name>Prompt Science</itunes:name>
+      <itunes:email>scienceprompt@gmail.com</itunes:email>
+    </itunes:owner>
+    <itunes:category text="Science &amp; Technology" />
+    <itunes:image href="https://promptscience.org/assets/cover.png" />
+    
+    <item>
+      <title>Special: DeepMind, Navier–Stokes, and the Millennium Problem</title>
+      <description>How AI-assisted mathematics is exploring one of the hardest open problems in fluid dynamics.</description>
+      <link>https://promptscience.org/</link>
+      <guid isPermaLink="false">https://promptscience.org/episodes/promptscienceE1.mp3</guid>
+      <pubDate>Sun, 05 Oct 2025 10:00:00 +0000</pubDate>
+      <enclosure url="https://promptscience.org/episodes/promptscienceE1.mp3" length="0" type="audio/mpeg"/>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:explicit>false</itunes:explicit>
+      <itunes:author>Prompt Science</itunes:author>
+      <itunes:summary>DeepMind, Navier–Stokes, and how AI is helping mathematicians explore the Millennium Prize Problem.</itunes:summary>
+      <itunes:duration>11:45</itunes:duration>
+    </item>
+  </channel>
+</rss>
