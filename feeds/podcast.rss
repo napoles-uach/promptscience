@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"
      xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
      xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
     <title>Prompt Science</title>
@@ -8,29 +9,38 @@
     <atom:link href="https://promptscience.org/feeds/podcast.rss" rel="self" type="application/rss+xml" />
     <description>AI, research, and the frontiers of discovery — a community-audited podcast.</description>
     <language>en-us</language>
+    <copyright>© 2025 Prompt Science — Audio &amp; text under CC BY 4.0</copyright>
     <lastBuildDate>Sun, 05 Oct 2025 10:00:00 +0000</lastBuildDate>
     <itunes:author>Prompt Science</itunes:author>
     <itunes:summary>AI, research, and the frontiers of discovery — a community-audited podcast, where humans and LLMs collaborate to produce accurate, verifiable narratives.</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
+    <itunes:type>episodic</itunes:type>
     <itunes:owner>
       <itunes:name>Prompt Science</itunes:name>
       <itunes:email>scienceprompt@gmail.com</itunes:email>
     </itunes:owner>
-    <itunes:category text="Science &amp; Technology" />
+    <itunes:category text="Science">
+      <itunes:category text="Mathematics"/>
+    </itunes:category>
+    <itunes:category text="Technology"/>
     <itunes:image href="https://promptscience.org/assets/cover.png" />
-    
+
     <item>
       <title>Special: DeepMind, Navier–Stokes, and the Millennium Problem</title>
       <description>How AI-assisted mathematics is exploring one of the hardest open problems in fluid dynamics.</description>
-      <link>https://promptscience.org/</link>
-      <guid isPermaLink="false">https://promptscience.org/episodes/promptscienceE1.mp3</guid>
+      <link>https://promptscience.org/#listen</link>
+      <guid isPermaLink="false">https://promptscience.org/episodes/promptscienceE1.mp3#e1</guid>
       <pubDate>Sun, 05 Oct 2025 10:00:00 +0000</pubDate>
-      <enclosure url="https://promptscience.org/episodes/promptscienceE1.mp3" length="0" type="audio/mpeg"/>
+      <enclosure url="https://promptscience.org/episodes/promptscienceE1.mp3" length="8531328" type="audio/mpeg"/>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:explicit>false</itunes:explicit>
       <itunes:author>Prompt Science</itunes:author>
       <itunes:summary>DeepMind, Navier–Stokes, and how AI is helping mathematicians explore the Millennium Prize Problem.</itunes:summary>
       <itunes:duration>11:45</itunes:duration>
+      <content:encoded><![CDATA[
+        <p>Episode page: <a href="https://promptscience.org/#listen">https://promptscience.org/#listen</a></p>
+        <p>Transcript: <a href="https://promptscience.org/episodes/promptscienceE1.md">https://promptscience.org/episodes/promptscienceE1.md</a></p>
+      ]]></content:encoded>
     </item>
   </channel>
 </rss>
