@@ -14,9 +14,9 @@
    [Nature Neuroscience](https://www.nature.com/articles/)
 
 4. **Microsoft Research (2025).**  
-   *Made to order bioweapon? AI-designed toxins slip through safety checks used by companies selling genes.*  
-   Reported in *Nature Machine Intelligence* and *MIT Technology Review* (October 2025).  
-   [Nature Machine Intelligence](https://www.nature.com/natmachintell/)  
+   *Made to order bioweapon? AI-designed toxins slip through safety checks used by companies selling genes.* 
+   Reported in [Microsoft News* (October 2025)](https://news.microsoft.com/signal/articles/researchers-find-and-help-fix-a-hidden-biosecurity-threat/)
+   [Science](https://www.science.org/doi/10.1126/science.adu8578)
    [MIT Technology Review article](https://www.technologyreview.com/)
 
 ---
