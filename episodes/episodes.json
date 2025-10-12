@@ -1,7 +1,7 @@
 [
   {
     "id": "2025-10-05-navier-stokes",
-    "title": "Special: DeepMind, Navier–Stokes, and the Millennium Problem",
+    "title": "E1 - Special: DeepMind, Navier–Stokes, and the Millennium Problem",
     "date": "2025-10-05",
     "duration": "11:45",
     "audio": "episodes/promptscienceE1.mp3",
@@ -10,7 +10,7 @@
   },
   {
     "id": "2025-10-12-weekly",
-    "title": "Weekly: AI Olympiads, Molecular Dynamics, CellTransformers, and Biosecurity Risks",
+    "title": "E2 - Weekly: AI Olympiads, Molecular Dynamics, CellTransformers, and Biosecurity Risks",
     "date": "2025-10-12",
     "duration": "08:37",
     "audio": "episodes/promptscienceE2.mp3",
