@@ -7,5 +7,14 @@
     "audio": "episodes/promptscienceE1.mp3",
     "transcript": "episodes/promptscienceE1.md",
     "description": "How AI-assisted mathematics is exploring one of the hardest open problems in fluid dynamics."
+  },
+  {
+    "id": "2025-10-12-weekly",
+    "title": "Weekly: AI Olympiads, Molecular Dynamics, CellTransformers, and Biosecurity Risks",
+    "date": "2025-10-12",
+    "duration": "08:37",
+    "audio": "episodes/promptscienceE2.mp3",
+    "transcript": "episodes/promptscienceE2.md",
+    "description": "This week in science: LLMs reach gold-medal astrophysics performance, generative molecular models bridge femtosecond-to-nanosecond dynamics, transformers map the mouse brain, and biosecurity gaps emerge in AI toxin design."
   }
 ]
