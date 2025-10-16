@@ -17,5 +17,15 @@
     "transcript": "episodes/promptscienceE2.md",
     "refs": "episodes/promptscienceE2_refs.md",
     "description": "This week in prompt science: LLMs reach gold-medal astrophysics performance, generative molecular models bridge femtosecond-to-nanosecond dynamics, transformers map the mouse brain, and biosecurity gaps emerge in AI toxin design."
-  }
+  },
+  {
+  "id": "2025-10-19-gemma-cancer",
+  "title": "Gemma, C2S-Scale, and the AI-Driven Path to Cancer Immunotherapy",
+  "date": "2025-10-19",
+  "duration": "13:45",
+  "audio": "episodes/promptscienceE3.mp3",
+  "transcript": "episodes/promptscienceE3.md",
+  "refs": "episodes/promptscienceE3_refs.md",
+  "description": "A special deep dive into how Google's Gemma and the C2S-Scale model helped identify a new potential pathway for cancer immunotherapy — from AI reasoning to real biological validation in human cells."
+}
 ]
