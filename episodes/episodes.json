@@ -27,5 +27,16 @@
   "transcript": "episodes/promptscienceE3.md",
   "refs": "episodes/promptscienceE3_refs.md",
   "description": "A special deep dive into how Google's Gemma and the C2S-Scale model helped identify a new potential pathway for cancer immunotherapy — from AI reasoning to real biological validation in human cells."
+},
+  {
+  "id": "2025-10-19-frontiers",
+  "title": "GPT-5 Controversy, AI-Controlled Fusion, Campi Flegrei, Calibrating Generative Models, TorchSim, and Open Agents",
+  "date": "2025-10-19",
+  "duration": "12:30",
+  "audio": "episodes/promptscienceE3.mp3",
+  "transcript": "episodes/promptscienceE3.md",
+  "refs": "episodes/promptscienceE3_refs.md",
+  "description": "This week’s episode covers the GPT-5/Erdős controversy and why it was a communication failure, DeepMind+CFS’s TORAX for AI-controlled fusion plasmas, an AI-revealed ring fault beneath Campi Flegrei, new methods to calibrate generative models, TorchSim’s move to community governance for MLIP simulation, and the Open Conference of AI Agents for Science 2025."
 }
+
 ]
