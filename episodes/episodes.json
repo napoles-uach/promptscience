@@ -33,9 +33,9 @@
   "title": "GPT-5 Controversy, AI-Controlled Fusion, Campi Flegrei, Calibrating Generative Models, TorchSim, and Open Agents",
   "date": "2025-10-19",
   "duration": "12:30",
-  "audio": "episodes/promptscienceE3.mp3",
-  "transcript": "episodes/promptscienceE3.md",
-  "refs": "episodes/promptscienceE3_refs.md",
+  "audio": "episodes/promptscienceE4.mp3",
+  "transcript": "episodes/promptscienceE4.md",
+  "refs": "episodes/promptscienceE4_refs.md",
   "description": "This week’s episode covers the GPT-5/Erdős controversy and why it was a communication failure, DeepMind+CFS’s TORAX for AI-controlled fusion plasmas, an AI-revealed ring fault beneath Campi Flegrei, new methods to calibrate generative models, TorchSim’s move to community governance for MLIP simulation, and the Open Conference of AI Agents for Science 2025."
 }
 
